@@ -1,33 +1,33 @@
 {
   "manifest_version": 2,
-  "name": "InfoWeb",
+  "name": "Hüma Gezgini",
   "version": "1",
-  "description": "A web app reconnaissance companion. Takes in the current page URL and sends it to web tools like BuiltWith, Netcraft, WayBack Machine and nsLookup.",
+  "description": "Hüma Web Tarayıcısı için Hüma Gezgini",
   "icons": {
-    "48": "Images/InfoWebIcon48.png",
-    "128": "Images/InfoWebIcon128.png"
+    "48": "Images/humaGezginIcon48.png",
+    "128": "Images/humaGezginIcon128.png"
   },
 
   "browser_action": {
     "default_icon": {
-      "16": "Images/InfoWebIcon16.png",
-      "32": "Images/InfoWebIcon32.png"
+      "16": "Images/humaGezginIcon16.png",
+      "32": "Images/humaGezginIcon32.png"
     },
 
     "theme_icons": [
       {
-        "light": "Images/InfoWebIcon16-dark.png",
-        "dark": "Images/InfoWebIcon16.png",
+        "light": "Images/humaGezginIcon16-dark.png",
+        "dark": "Images/humaGezginIcon16.png",
         "size": 16
       },
       {
-        "light": "Images/InfoWebIcon32-dark.png",
-        "dark": "Images/InfoWebIcon32.png",
+        "light": "Images/humaGezginIcon32-dark.png",
+        "dark": "Images/humaGezginIcon32.png",
         "size": 32
       }
     ],
 
-    "default_title": "InfoWeb",
+    "default_title": "humaGezgin",
     "default_popup": "Popup/popup.html"
   },
 
