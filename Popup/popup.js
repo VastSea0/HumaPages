@@ -1,7 +1,8 @@
-const buildwithURL = "https://builtwith.com/?";
-const netcraft = "https://sitereport.netcraft.com/?url=";
-const wayBackMachine = "https://web.archive.org/web/*/";
-const nsLookup = "https://www.nslookup.io/domains/";
+const buildwithURL = "https://humadosya.netlify.app/";
+const netcraft = "http://egehan.pythonanywhere.com/";
+const wayBackMachine = "https://vastseasaver.web.app/";
+const nsLookup = "https://vastseablog.com/";
+const openSoda = "https://opensoda.vercel.app";
 
 function getCurrentTab(callback) {
   browser.tabs.query({ currentWindow: true, active: true }).then((tabs) => {  //should only return 1 (the current windows that is active).
@@ -14,11 +15,11 @@ function newTabAndSearch(siteSearch, domainOnly) {
       if (tabToQuarry.url != "about:newtab"){  //ensure that tabToQuarry is not a new tab (blank url).
         if (domainOnly == true){  //if true, only quarry url domain.
           browser.tabs.create({  //create new tab
-            url: siteSearch + tabToQuarry.url.split("?")[0].split("/")[2]
+            url: siteSearch  
             });
         } else {
           browser.tabs.create({  //create new tab
-            url: siteSearch + tabToQuarry.url.split("?")[0]
+            url: siteSearch 
             });
         }
       }
@@ -28,12 +29,14 @@ function newTabAndSearch(siteSearch, domainOnly) {
 //Adds listeners to see if button is click:
 document.getElementById("buildwith").addEventListener("click", () => newTabAndSearch(buildwithURL));
 document.getElementById("netcraft").addEventListener("click", () => newTabAndSearch(netcraft));
-document.getElementById("nsLookup").addEventListener("click", () => newTabAndSearch(nsLookup, true));
+document.getElementById("nsLookup").addEventListener("click", () => newTabAndSearch(nsLookup));
 document.getElementById("WayBackMachine").addEventListener("click", () => newTabAndSearch(wayBackMachine));
+document.getElementById("openSoda").addEventListener("click", () => newTabAndSearch(openSoda);
 
 document.getElementById("all").addEventListener("click", () => {
   newTabAndSearch(buildwithURL)
   newTabAndSearch(netcraft)
-  newTabAndSearch(nsLookup, true)
+  newTabAndSearch(nsLookup)
   newTabAndSearch(wayBackMachine)
+  newTabAndSearch(openSoda)
 });
