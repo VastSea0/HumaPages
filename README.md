@@ -1,5 +1,40 @@
 # Hüma Gezgini
 
+## TO-DO
+- [x] Sidebar
+    - [x] yer imleri ve notlar
+        - [ ] Drag & Drop
+        - [ ] Not düzenle & yer immi düzenle
+        - [ ] Not sil & Not yer immi sil
+    - [x] Hüma bağlantıları 
+        - [ ] Bağlantı düzenleme   
+        - [ ] Bağlantı Kaldırma  
+    - [ ] Sekronizasyon 
+ - [x] Hüma Sayfaları
+    - [x] Hesap makinesi
+        - [ ] Kişiselleştirme seçenekleri
+    - [x] Yerimmi yöneticisi
+        - [X] yer immi silme
+        - [ ] yer immi düzenleme
+        - [ ] Drag & Drop
+    - [x] Yapılacaklar listesi yöneticisi
+        - [X] öğe silme
+        - [ ] öğe düzenleme
+        - [ ] öğeleri kategorize etme
+        - [ ] Drag & Drop
+    - [x] Hüma Sayfaları ana sayfa
+        - [x] ön izlemeler
+        - [ ] widget desteği
+        - [ ] Kişiselleştirme seçenekleri
+- [ ] Hüma İçerik Kaydetme
+    - [ ] İçerik indirme
+    - [ ] İçerik düzenleme
+    - [ ] İçerik silme
+    - [ ] Sekronizasyon 
+
+
+
+
 **Hüma Gezgini:** Hüma Tarayıcısında Yer İmleri ve Gezinti için Güçlü Eklenti
 
 ![image](https://github.com/VastSea0/HumaPages/assets/144556903/1d082d51-7242-429a-97ba-6262c8808154)
