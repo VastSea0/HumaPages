@@ -24,6 +24,21 @@ FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["images"] += [
     "images/logo6.png",
 ]
 
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"] += [
+    "bookmarks/style.css",
+    "bookmars/index.html",
+    "bookmars/script.js",
+    "calculator/style.css",
+    "calculator/index.html",
+    "calculator/script.js",
+    "icons/bookmarks.svg,
+    "icons/calculator.svg",
+    "icons/todo.svg",
+    "todo/style.css",
+    "todo/index.html",
+    "todo/script.js",
+]
+
 FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["popup"] += [
     "popup/popup.css",
     "popup/popup.html",
