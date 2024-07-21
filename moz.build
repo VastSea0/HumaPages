@@ -24,24 +24,31 @@ FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["images"] += [
     "images/logo6.png",
 ]
 
-FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"] = [
-    "apps/bookmarks/index.html",
-    "apps/bookmarks/script.js",
-    "apps/bookmarks/styles.css",
-    "apps/calculator/index.html",
-    "apps/calculator/script.js",
-    "apps/calculator/styles.css",
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"]["icons"] += [
     "apps/icons/bookmarks.svg",
     "apps/icons/calculator.svg",
     "apps/icons/todo.svg",
-    "apps/index.html",
-    "apps/script.js",
-    "apps/styles.css",
+]
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"]["todo"] += [
     "apps/todo/index.html",
     "apps/todo/script.js",
     "apps/todo/styles.css",
 ]
-
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"]["bookmarks"] += [
+    "apps/bookmarks/index.html",
+    "apps/bookmarks/script.js",
+    "apps/bookmarks/styles.css",
+]
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"]["calculator"] += [
+    "apps/calculator/index.html",
+    "apps/calculator/script.js",
+    "apps/calculator/styles.css",
+]
+FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"] += [
+    "apps/index.html",
+    "apps/script.js",
+    "apps/styles.css",
+]
 
 FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["popup"] += [
     "popup/popup.css",
