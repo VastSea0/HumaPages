@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         browser.tabs.create({ url: "https://humadosya.netlify.app/" });
     });
     document.getElementById("humabetik").addEventListener("click", () => {
-        browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
+        alert("BU servis şu anda devre dışı") //browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
     });
     document.getElementById("verasis").addEventListener("click", () => {
         browser.tabs.create({ url: "https://vastseasaver.web.app/" });
@@ -31,9 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("huma-sekmeleri").addEventListener("click", () => {
         browser.tabs.create({ url: "https://github.com/VastSea0/Huma-Sekmeleri/releases/download/v0a1/Huma.Sekmeleri.xpi" });
     });
+    document.getElementById("huma-pages").addEventListener("click", () => {
+        browser.tabs.create({ url: "/apps/index.html" });
+    });
     document.getElementById("all").addEventListener("click", () => {
         browser.tabs.create({ url: "https://humadosya.netlify.app/" });
-        browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
+        //browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
         browser.tabs.create({ url: "https://vastseasaver.web.app/" });
         browser.tabs.create({ url: "https://humatarayici.com/docs/" });
         browser.tabs.create({ url: "https://opensoda.vercel.app" });
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("addNoteButton").addEventListener("click", addNote);
     
-      const settingsButton = document.getElementById('settingsButton');
+    const settingsButton = document.getElementById('settingsButton');
     const settingsModal = document.getElementById('settingsModal');
     const closeModal = document.querySelector('.close');
     const saveSettingsButton = document.getElementById('saveSettings');
@@ -144,11 +147,14 @@ function loadSettings() {
     }
 }
 
+/*
+Yer imleri için bu fonskiyonlar kullanılacak
+*/
 
 function fetchBookmarks() {
     browser.bookmarks.getTree().then(bookmarkTreeNodes => {
         let bookmarksContainer = document.getElementById("bookmarksContainer");
-        bookmarksContainer.innerHTML = ""; // Mevcut içeriği temizleyelim
+        bookmarksContainer.innerHTML = "";  
 
         bookmarkTreeNodes.forEach(node => {
             displayBookmark(node, bookmarksContainer);
@@ -157,6 +163,7 @@ function fetchBookmarks() {
         console.error("Yer imleri alınırken hata oluştu:", err);
     });
 }
+
 
 function displayBookmark(bookmark, container) {
     if (bookmark.url) {
@@ -202,9 +209,11 @@ function addBookmark() {
     }
 }
 
+//------------------------------------------------------------------
+
 function loadNotes() {
     let notesContainer = document.getElementById("notesContainer");
-    notesContainer.innerHTML = ""; // Mevcut içeriği temizleyelim
+    notesContainer.innerHTML = ""; 
 
     let notes = JSON.parse(localStorage.getItem("notes")) || [];
     notes.forEach((note, index) => {
