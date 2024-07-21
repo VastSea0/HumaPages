@@ -177,7 +177,14 @@ function displayBookmark(bookmark, container) {
 
         let name = document.createElement("div");
         name.classList.add("name");
-        name.textContent = bookmark.title;
+
+         
+        const MAX_NAME_LENGTH = 30;  
+        if (bookmark.title.length > MAX_NAME_LENGTH) {
+            name.textContent = bookmark.title.substring(0, MAX_NAME_LENGTH) + '...';
+        } else {
+            name.textContent = bookmark.title;
+        }
 
         row.appendChild(img);
         row.appendChild(name);
@@ -192,6 +199,7 @@ function displayBookmark(bookmark, container) {
         bookmark.children.forEach(child => displayBookmark(child, container));
     }
 }
+
 
 function addBookmark() {
     let title = document.getElementById("bookmarkTitle").value;
