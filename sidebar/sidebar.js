@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
         browser.tabs.create({ url: "https://humadosya.netlify.app/" });
     });
     document.getElementById("humabetik").addEventListener("click", () => {
-        alert("BU servis şu anda devre dışı") //browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
+        browser.tabs.create({ url: "/apps/ayarlar.html#helo" });
+    });  
+    document.getElementById("humaayarlar").addEventListener("click", () => {
+        browser.tabs.create({ url: "/apps/ayarlar.html#helo" });
     });
     document.getElementById("verasis").addEventListener("click", () => {
         browser.tabs.create({ url: "https://vastseasaver.web.app/" });
-    });
-    document.getElementById("vastseablog").addEventListener("click", () => {
-        browser.tabs.create({ url: "https://vastseablog.com/" });
     });
     document.getElementById("openSoda").addEventListener("click", () => {
         browser.tabs.create({ url: "https://opensoda.vercel.app" });
@@ -36,9 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("all").addEventListener("click", () => {
         browser.tabs.create({ url: "https://humadosya.netlify.app/" });
-        //browser.tabs.create({ url: "http://egehan.pythonanywhere.com/" });
         browser.tabs.create({ url: "https://vastseasaver.web.app/" });
-        browser.tabs.create({ url: "https://humatarayici.com/docs/" });
+        browser.tabs.create({ url: "https://humatarayici.com/" });
         browser.tabs.create({ url: "https://opensoda.vercel.app" });
         browser.tabs.create({ url: "https://egehan.netlify.app" });
     });
@@ -46,15 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     loadNotes();
 
     document.getElementById("addNoteButton").addEventListener("click", addNote);
-    
+ 
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const settingsButton = document.getElementById('settingsButton');
     const settingsModal = document.getElementById('settingsModal');
     const closeModal = document.querySelector('.close');
     const saveSettingsButton = document.getElementById('saveSettings');
+    const settingsTextarea = document.getElementById('settingsTextarea');
 
     // Ayarların açılması
     settingsButton.addEventListener('click', () => {
         settingsModal.style.display = 'block';
+        showSettingsInTextarea(); // JSON verilerini textarea'da göster
     });
 
     // Ayarların kapanması
@@ -70,37 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Renklerin kaydedilmesi
     saveSettingsButton.addEventListener('click', () => {
-        const bgColor = document.getElementById('bgColor').value;
-        const textColor = document.getElementById('textColor').value;
-        const buttonColor = document.getElementById('buttonColor').value;
-        const classColor = document.getElementById('classColor').value;
-
-        // Arka plan rengi
-        document.body.style.backgroundColor = bgColor;
-
-        // Yazı rengi
-        document.body.style.color = textColor;
-
-        // Buton rengi
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.style.backgroundColor = buttonColor;
-            button.style.color = textColor; // Buton yazı rengi de ayarlansın
-        });
-
-        // Belirli class rengi
-        const rows = document.querySelectorAll('.row');
-        rows.forEach(row => {
-            row.style.backgroundColor = classColor;
-        });
-
-        // Renklerin localStorage'a kaydedilmesi
-        localStorage.setItem('bgColor', bgColor);
-        localStorage.setItem('textColor', textColor);
-        localStorage.setItem('buttonColor', buttonColor);
-        localStorage.setItem('classColor', classColor);
-
-        // Ayarların kapatılması
+        applySettingsFromTextarea();
         settingsModal.style.display = 'none';
     });
 
@@ -110,42 +84,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // LocalStorage'dan renkleri yükleyip uygulayan fonksiyon
 function loadSettings() {
-    const bgColor = localStorage.getItem('bgColor');
-    const textColor = localStorage.getItem('textColor');
-    const buttonColor = localStorage.getItem('buttonColor');
-    const classColor = localStorage.getItem('classColor');
-
-    if (bgColor) {
-        document.body.style.backgroundColor = bgColor;
-        document.getElementById('bgColor').value = bgColor;
-    }
-
-    if (textColor) {
-        document.body.style.color = textColor;
-        document.getElementById('textColor').value = textColor;
-
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.style.color = textColor;
-        });
-    }
-
-    if (buttonColor) {
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.style.backgroundColor = buttonColor;
-        });
-        document.getElementById('buttonColor').value = buttonColor;
-    }
-
-    if (classColor) {
-        const rows = document.querySelectorAll('.row');
-        rows.forEach(row => {
-            row.style.backgroundColor = classColor;
-        });
-        document.getElementById('classColor').value = classColor;
+    const colorSettings = JSON.parse(localStorage.getItem('colorSettings')) || {};
+    if (colorSettings) {
+        applySettings(colorSettings);
     }
 }
+
+// JSON verilerini textarea'da gösteren fonksiyon
+function showSettingsInTextarea() {
+    const colorSettings = JSON.parse(localStorage.getItem('colorSettings')) || {};
+    const jsonString = JSON.stringify(colorSettings, null, 2);
+    const settingsTextarea = document.getElementById('settingsTextarea');
+    settingsTextarea.value = jsonString;
+}
+
+// JSON verilerini textarea'dan okuyup uygulayan fonksiyon
+function applySettingsFromTextarea() {
+    const settingsTextarea = document.getElementById('settingsTextarea');
+    try {
+        const updatedSettings = JSON.parse(settingsTextarea.value);
+        applySettings(updatedSettings);
+        localStorage.setItem('colorSettings', JSON.stringify(updatedSettings));
+    } catch (e) {
+        console.error('JSON verileri geçersiz:', e);
+    }
+}
+
+// Ayarları uygulayan fonksiyon
+function applySettings(settings) {
+    if (settings.bgColor) {
+        document.body.style.backgroundColor = settings.bgColor;
+    }
+    if (settings.textColor) {
+        document.body.style.color = settings.textColor;
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.style.color = settings.textColor;
+        });
+    }
+    if (settings.buttonColor) {
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.style.backgroundColor = settings.buttonColor;
+        });
+    }
+    if (settings.classColor) {
+        const rows = document.querySelectorAll('.row');
+        rows.forEach(row => {
+            row.style.backgroundColor = settings.classColor;
+        });
+    }
+}
+
 
 /*
 Yer imleri için bu fonskiyonlar kullanılacak

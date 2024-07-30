@@ -45,10 +45,18 @@ FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"]["calculator"
     "apps/calculator/styles.css",
 ]
 FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["apps"] += [
+    "apps/ayarlar.css",
+    "apps/ayarlar.html",
+    "apps/ayarlar.js",
+    "apps/content.css",
+    "apps/content.html",
+    "apps/content.js",
+    "apps/content_loader.js",
     "apps/index.html",
     "apps/script.js",
     "apps/styles.css",
 ]
+
 
 FINAL_TARGET_FILES.features["humagezgini@humatarayici.com"]["popup"] += [
     "popup/popup.css",

@@ -1,36 +1,38 @@
 # Hüma Gezgini
 
 ## TO-DO
-- [x] Sidebar
-    - [x] yer imleri ve notlar
-        - [ ] Drag & Drop
-        - [ ] Not düzenle & yer immi düzenle
-        - [ ] Not sil & Not yer immi sil
-    - [x] Hüma bağlantıları 
-        - [ ] Bağlantı düzenleme   
-        - [ ] Bağlantı Kaldırma  
-    - [ ] Sekronizasyon 
- - [x] Hüma Sayfaları
-    - [x] Hesap makinesi
-        - [ ] Kişiselleştirme seçenekleri
-    - [x] Yerimmi yöneticisi
-        - [X] yer immi silme
-        - [ ] yer immi düzenleme
-        - [ ] Drag & Drop
-    - [x] Yapılacaklar listesi yöneticisi
-        - [X] öğe silme
-        - [ ] öğe düzenleme
-        - [ ] öğeleri kategorize etme
-        - [ ] Drag & Drop
-    - [x] Hüma Sayfaları ana sayfa
-        - [x] ön izlemeler
-        - [ ] widget desteği
-        - [ ] Kişiselleştirme seçenekleri
-- [ ] Hüma İçerik Kaydetme
-    - [ ] İçerik indirme
-    - [ ] İçerik düzenleme
-    - [ ] İçerik silme
-    - [ ] Sekronizasyon 
+- [x] Hüma gezgini (0a11)
+        - [x] Sidebar (0a11)
+          - [x] yer imleri ve notlar (0a11)  
+              - [ ] Drag & Drop
+              - [ ] Not düzenle & yer immi düzenle
+              - [ ] Not sil & Not yer immi sil 
+          - [x] Hüma bağlantıları  (0a11)
+              - [ ] Bağlantı düzenleme   
+              - [ ] Bağlantı Kaldırma  
+          - [ ] Sekronizasyon 
+        - [x] Hüma Sayfaları (0a15)
+          - [x] Hesap makinesi (0a15)
+              - [ ] Kişiselleştirme seçenekleri
+          - [x] Yerimmi yöneticisi (0a15)
+              - [X] yer immi silme (0a15)
+              - [ ] yer immi düzenleme
+              - [ ] Drag & Drop
+          - [x] Yapılacaklar listesi yöneticisi (0a15)
+              - [X] öğe silme (0a15)
+              - [ ] öğe düzenleme
+              - [ ] öğeleri kategorize etme
+              - [ ] Drag & Drop
+          - [x] Hüma Sayfaları ana sayfa (0a15)
+              - [x] ön izlemeler (0a15)
+              - [ ] widget desteği
+              - [ ] Kişiselleştirme seçenekleri
+        - [+] Hüma İçerik Kaydetme (0a15)
+          - [+] İçerik indirme (0a15)
+          - [ ] İçerik düzenleme
+          - [+] İçerik silme (0a15)
+          - [ ] Sekronizasyon 
+          - [ ] İçerileri kategorize etmek  
 
 
 
